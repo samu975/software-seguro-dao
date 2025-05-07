@@ -1,4 +1,5 @@
 import sqlite3
+from .populate_db import populate_database
 
 def init_db():
     conexion = sqlite3.connect('funcionarios.db')
@@ -43,6 +44,9 @@ def init_db():
 
     conexion.commit()
     conexion.close()
+    
+    print("Inicializando base de datos con datos de ejemplo...")
+    populate_database()
 
 if __name__ == '__main__':
     init_db()
